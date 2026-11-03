@@ -1,0 +1,4 @@
+# 빌드는 GitHub Actions에서 끝내고 site/ 폴더를 그대로 배포해요.
+[build]
+  publish = "site"
+  command = "echo 'prebuilt site'"
