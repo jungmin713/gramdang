@@ -3,17 +3,17 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 
 const SITE_URL = (process.env.SITE_URL || 'https://gramdang.example.com').replace(/\/$/, '')
-const products = JSON.parse(readFileSync('src/data/products.json', 'utf8'))
-const CAT = { drink: '단백질 음료', bar: '프로틴바', chicken: '닭가슴살' }
+const products = JSON.parse(readFileSync('src/data/products.json', 'utf8')).filter((p) => !p.hidden)
+const CAT = { drink: '단백질 음료', dairy: '그릭요거트', tofu: '두부', chicken: '닭가슴살', seafood: '참치·수산물', bar: '프로틴바', spread: '땅콩버터', grain: '통곡물 크래커', salad: '샐러드', supplement: '단백질 보충제' }
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
 const won = (n) => Math.round(n).toLocaleString('ko-KR')
 
 const rows = products
-  .map((p) => ({ ...p, ppg: p.price / (p.count * p.protein) }))
-  .sort((a, b) => a.ppg - b.ppg)
+  .map((p) => ({ ...p, ppg: (p.protein ?? 0) >= 10 && !['spread', 'grain', 'salad'].includes(p.category) ? p.price / (p.count * p.protein) : null, per100: p.totalG ? (p.price / p.totalG) * 100 : null }))
+  .sort((a, b) => (a.ppg ?? 1e6 + (a.per100 ?? 0)) - (b.ppg ?? 1e6 + (b.per100 ?? 0)))
 
 const list = `<ol>${rows
-  .map((p) => `<li><h2>${esc(p.name)}</h2><p>${esc(CAT[p.category])} ${esc(p.brand)} ${esc(p.serving)} ${p.count}개입. 1회 단백질 ${p.protein}g, 당류 ${esc(p.sugarLabel ?? p.sugar + 'g')}, 열량 ${p.kcal}kcal. 단백질 1g당 약 ${won(p.ppg)}원.</p>${p.url ? `<p><a href="${esc(p.url)}" rel="sponsored noopener">쿠팡에서 보기</a></p>` : ''}</li>`)
+  .map((p) => `<li><h2>${esc(p.name)}</h2><p>${esc(CAT[p.category])} ${esc(p.brand)} ${esc(p.serving)} ${p.count}개입. ${esc(p.serving)} 기준 ${p.protein != null ? `단백질 ${p.protein}g, 당류 ${esc(p.sugarLabel ?? p.sugar + 'g')}, 열량 ${p.kcal}kcal` : '생채소로 영양성분 표시 없음'}. 감미료 ${esc((p.sweeteners ?? []).join(', ') || '없음')}. ${p.ppg != null ? `단백질 1g당 약 ${won(p.ppg)}원` : p.per100 != null ? `100g당 약 ${won(p.per100)}원` : ''}.</p>${p.url ? `<p><a href="${esc(p.url)}" rel="sponsored noopener">쿠팡에서 보기</a></p>` : ''}</li>`)
   .join('')}</ol>`
 
 const jsonld = {
@@ -22,7 +22,7 @@ const jsonld = {
     { '@type': 'WebSite', name: '그램당', url: `${SITE_URL}/`, inLanguage: 'ko-KR' },
     {
       '@type': 'ItemList',
-      name: '저당 고단백 식품 단백질 1g당 가격 순위',
+      name: '설탕 없는 건강식 가격 비교',
       itemListElement: rows.map((p, i) => ({
         '@type': 'ListItem',
         position: i + 1,
@@ -31,7 +31,7 @@ const jsonld = {
           name: p.name,
           brand: { '@type': 'Brand', name: p.brand },
           category: CAT[p.category],
-          description: `1회 제공량 ${p.serving} 기준 단백질 ${p.protein}g, 당류 ${p.sugarLabel ?? p.sugar + 'g'}, 열량 ${p.kcal}kcal`,
+          description: p.protein != null ? `${p.serving} 기준 단백질 ${p.protein}g, 당류 ${p.sugarLabel ?? p.sugar + 'g'}, 열량 ${p.kcal}kcal` : '무농약 생채소',
         },
       })),
     },
