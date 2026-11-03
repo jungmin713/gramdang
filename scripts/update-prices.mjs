@@ -58,6 +58,8 @@ for (const p of products) {
     }
     updated++
     if (!p.coupangProductId) { p.coupangProductId = String(hit.productId); changed = true }
+    p.priceDate = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10)
+    changed = true
     if (Number(hit.productPrice) !== p.price) {
       console.log(`${p.name}: ${p.price} → ${hit.productPrice}`)
       p.price = Number(hit.productPrice)
