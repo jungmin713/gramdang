@@ -1,0 +1,40 @@
+name: 매일 가격 갱신
+
+on:
+  schedule:
+    - cron: '0 22 * * *' # 매일 한국시간 오전 7시
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: 쿠팡 가격 받아오기
+        env:
+          COUPANG_ACCESS_KEY: ${{ secrets.COUPANG_ACCESS_KEY }}
+          COUPANG_SECRET_KEY: ${{ secrets.COUPANG_SECRET_KEY }}
+        run: node scripts/update-prices.mjs
+      - name: 바뀐 게 있으면 다시 빌드하고 저장
+        run: |
+          if git diff --quiet -- src/data; then
+            echo "바뀐 가격이 없어요"
+            exit 0
+          fi
+          bash scripts/build.sh
+          git config user.name "gramdang-bot"
+          git config user.email "gramdang-bot@users.noreply.github.com"
+          git add src/data site
+          git commit -m "가격 자동 갱신 $(TZ=Asia/Seoul date +%F)"
+          git push
