@@ -9,11 +9,14 @@ const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&l
 const won = (n) => Math.round(n).toLocaleString('ko-KR')
 
 const rows = products
-  .map((p) => ({ ...p, ppg: (p.protein ?? 0) >= 10 && !['spread', 'grain', 'salad'].includes(p.category) ? p.price / (p.count * p.protein) : null, per100: p.totalG ? (p.price / p.totalG) * 100 : null }))
+  .map((p) => {
+    const unit = Math.min(p.price / p.count, ...(p.offers ?? []).map((o) => (o.price + o.ship) / (o.count ?? p.count)))
+    return { ...p, ppg: (p.protein ?? 0) >= 10 && !['spread', 'grain', 'salad'].includes(p.category) ? unit / p.protein : null, per100: p.totalG ? ((unit * p.count) / p.totalG) * 100 : null }
+  })
   .sort((a, b) => (a.ppg ?? 1e6 + (a.per100 ?? 0)) - (b.ppg ?? 1e6 + (b.per100 ?? 0)))
 
 const list = `<ol>${rows
-  .map((p) => `<li><h2>${esc(p.name)}</h2><p>${esc(CAT[p.category])} ${esc(p.brand)} ${esc(p.serving)} ${p.count}개입. ${esc(p.serving)} 기준 ${p.protein != null ? `단백질 ${p.protein}g, 당류 ${esc(p.sugarLabel ?? p.sugar + 'g')}, 열량 ${p.kcal}kcal` : '생채소로 영양성분 표시 없음'}. 감미료 ${esc((p.sweeteners ?? []).join(', ') || '없음')}. ${p.ppg != null ? `단백질 1g당 약 ${won(p.ppg)}원` : p.per100 != null ? `100g당 약 ${won(p.per100)}원` : ''}.</p>${p.url ? `<p><a href="${esc(p.url)}" rel="sponsored noopener">쿠팡에서 보기</a></p>` : ''}</li>`)
+  .map((p) => `<li><h2>${esc(p.name)}</h2><p>${esc(CAT[p.category])} ${esc(p.brand)} ${esc(p.serving)} ${p.count}개입. ${esc(p.serving)} 기준 ${p.protein != null ? `단백질 ${p.protein}g, 당류 ${esc(p.sugarLabel ?? p.sugar + 'g')}, 열량 ${p.kcal}kcal` : '생채소로 영양성분 표시 없음'}. 감미료 ${esc((p.sweeteners ?? []).join(', ') || '없음')}. ${p.ppg != null ? `단백질 1g당 약 ${won(p.ppg)}원` : p.per100 != null ? `100g당 약 ${won(p.per100)}원` : ''}. 쿠팡 ${won(p.price)}원${(p.offers ?? []).map((o) => `, ${esc(o.store)} ${won(o.price + o.ship)}원`).join('')}.</p>${p.url ? `<p><a href="${esc(p.url)}" rel="sponsored noopener">쿠팡에서 보기</a></p>` : ''}</li>`)
   .join('')}</ol>`
 
 const jsonld = {
@@ -31,6 +34,14 @@ const jsonld = {
           name: p.name,
           brand: { '@type': 'Brand', name: p.brand },
           category: CAT[p.category],
+          ...(p.image ? { image: p.image.startsWith('//') ? 'https:' + p.image : p.image } : {}),
+          offers: {
+            '@type': 'AggregateOffer',
+            priceCurrency: 'KRW',
+            lowPrice: Math.min(p.price, ...(p.offers ?? []).filter((o) => !o.count).map((o) => o.price + o.ship)),
+            highPrice: Math.max(p.price, ...(p.offers ?? []).filter((o) => !o.count).map((o) => o.price + o.ship)),
+            offerCount: 1 + (p.offers ?? []).filter((o) => !o.count).length,
+          },
           description: p.protein != null ? `${p.serving} 기준 단백질 ${p.protein}g, 당류 ${p.sugarLabel ?? p.sugar + 'g'}, 열량 ${p.kcal}kcal` : '무농약 생채소',
         },
       })),
