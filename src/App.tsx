@@ -12,9 +12,14 @@ type Product = {
   protein: number | null; sugar: number | null; sugarLabel?: string; kcal: number | null; price: number
   priceSource: string; estimated: boolean; color: string; url?: string; coupangTitle?: string
   sweeteners?: string[]; note?: string; hidden?: boolean; priceDate?: string; plant?: boolean
-  totalG?: number; packLabel?: string
+  totalG?: number; packLabel?: string; image?: string
+  offers?: Offer[]; danawaUrl?: string; offersDate?: string
 }
-type Row = Product & { unit: number; ppg: number | null; per100: number | null; ratio: number | null; proteinFood: boolean }
+type Offer = { store: string; price: number; ship: number; url: string; count?: number }
+type Row = Product & {
+  unit: number; ppg: number | null; per100: number | null; ratio: number | null; proteinFood: boolean
+  bestStore: string; bestUnit: number; cheaperElsewhere: boolean
+}
 type SortKey = 'value' | 'protein' | 'sugar' | 'ratio' | 'price'
 type Sweet = 'all' | 'noArtificial' | 'none'
 
@@ -39,14 +44,25 @@ const SORTS: { key: SortKey; label: string }[] = [
   { key: 'price', label: '낮은 가격순' },
 ]
 
+const offerUnit = (p: Product, o: Offer) => (o.price + o.ship) / (o.count ?? p.count)
 const ROWS: Row[] = (raw as Product[]).filter((p) => !p.hidden).map((p) => {
   const proteinFood = (p.protein ?? 0) >= 10 && !WHOLE_CATS.includes(p.category)
+  const unit = p.price / p.count
+  let bestUnit = unit
+  let bestStore = p.priceSource
+  for (const o of p.offers ?? []) {
+    const u = offerUnit(p, o)
+    if (u < bestUnit) { bestUnit = u; bestStore = o.store }
+  }
   return {
     ...p,
     proteinFood,
-    unit: p.price / p.count,
-    ppg: proteinFood && p.protein ? p.price / (p.count * p.protein) : null,
-    per100: p.totalG ? (p.price / p.totalG) * 100 : null,
+    unit,
+    bestUnit,
+    bestStore,
+    cheaperElsewhere: bestUnit < unit - 0.5,
+    ppg: proteinFood && p.protein ? bestUnit / p.protein : null,
+    per100: p.totalG ? ((bestUnit * p.count) / p.totalG) * 100 : null,
     ratio: p.protein != null && p.kcal ? (p.protein * 4) / p.kcal : null,
   }
 })
@@ -161,6 +177,23 @@ function ProductArt({ p }: { p: Product }) {
   )
 }
 
+function ProductImage({ p }: { p: Product }) {
+  const [broken, setBroken] = useState(false)
+  if (!p.image || broken) return <ProductArt p={p} />
+  return (
+    <div className="grid h-full w-full place-items-center bg-white">
+      <img
+        src={p.image}
+        alt={p.name}
+        loading="lazy"
+        referrerPolicy="no-referrer"
+        onError={() => setBroken(true)}
+        className="h-full w-full object-contain p-2"
+      />
+    </div>
+  )
+}
+
 function Filters({
   sugarMax, setSugarMax, protMin, setProtMin, sweet, setSweet, onReset,
 }: {
@@ -254,7 +287,7 @@ export default function App() {
       <div className="bg-ink text-white">
         <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-4 px-4 py-1.5 text-[12px]">
           <span className="truncate opacity-80">이 사이트는 제휴 링크를 포함하고 있어요</span>
-          <span className="hidden shrink-0 opacity-80 sm:inline">쿠팡 판매가 기준 {PRICE_DATE}</span>
+          <span className="hidden shrink-0 opacity-80 sm:inline">쿠팡과 주요 쇼핑몰 판매가 기준 {PRICE_DATE}</span>
         </div>
       </div>
 
@@ -303,7 +336,7 @@ export default function App() {
                 {best.map((p, i) => (
                   <li key={p.id} className="flex items-center gap-3 py-2.5">
                     <span className={`grid h-6 w-6 shrink-0 place-items-center rounded text-[12px] font-black ${i === 0 ? 'bg-brand text-white' : 'bg-mint text-brand'}`}>{i + 1}</span>
-                    <span className="min-w-0 flex-1 truncate text-[14px]">{p.name}</span>
+                    <span className="min-w-0 flex-1 truncate text-[14px]">{p.name} <span className="text-[12px] text-sub">{p.bestStore}</span></span>
                     <span className="shrink-0 text-[16px] font-black tabular-nums text-brand">{won(p.ppg ?? 0)}원</span>
                   </li>
                 ))}
@@ -369,8 +402,8 @@ export default function App() {
                     return (
                       <li key={p.id} className="flex min-w-0 flex-col">
                         <a href={linkFor(p)} target="_blank" rel="noopener sponsored" className="group flex flex-1 flex-col">
-                          <div className="relative aspect-[10/7] max-w-full overflow-hidden rounded-lg">
-                            <ProductArt p={p} />
+                          <div className="relative aspect-[10/7] max-w-full overflow-hidden rounded-lg border border-line">
+                            <ProductImage p={p} />
                             {sort === 'value' && i < 3 && p.ppg != null && (
                               <span className="absolute left-0 top-0 rounded-br-lg bg-brand px-2 py-1 text-[12px] font-black text-white">{i + 1}위</span>
                             )}
@@ -382,13 +415,17 @@ export default function App() {
                           <h3 className="mt-0.5 line-clamp-2 text-[14px] font-medium leading-snug group-hover:underline md:text-[15px]">{p.name}</h3>
                           <p className="mt-1 text-[12px] text-sub">{packText(p)}</p>
                           <div className="mt-2 flex flex-wrap items-baseline gap-x-1.5">
+                            <span className="text-[11px] font-medium text-sub">{p.priceSource}</span>
                             <span className="text-[18px] font-black tabular-nums md:text-[20px]">{won(p.price)}원</span>
                             {!p.packLabel && <span className="text-[12px] text-sub">개당 {won(p.unit)}원</span>}
                           </div>
                           {v && (
-                            <div className="mt-1.5 inline-flex w-fit items-baseline gap-1 rounded bg-mint px-2 py-1">
-                              <span className="text-[11px] font-medium text-brand-dark">{v.label}</span>
-                              <span className="text-[15px] font-black tabular-nums text-brand">{won(v.v)}원</span>
+                            <div className="mt-1.5 flex flex-wrap items-baseline gap-x-1 gap-y-0.5">
+                              <span className="inline-flex items-baseline gap-1 rounded bg-mint px-2 py-1">
+                                <span className="text-[11px] font-medium text-brand-dark">{v.label}</span>
+                                <span className="text-[15px] font-black tabular-nums text-brand">{won(v.v)}원</span>
+                              </span>
+                              {(p.offers ?? []).length > 0 && <span className="text-[11px] text-sub">{p.bestStore} 기준</span>}
                             </div>
                           )}
                           <dl className="mt-3 grid grid-cols-3 border-t border-line pt-2 text-center">
@@ -414,9 +451,32 @@ export default function App() {
                             {p.estimated && <Info className="h-3 w-3" />}
                             {p.estimated ? '예시 가격' : `${p.priceSource} ${dot(p.priceDate ?? meta.priceDate)} 기준`}
                           </p>
-                          <span className="mt-3 flex items-center justify-center gap-1 rounded-md border border-ink py-2 text-[13px] font-bold transition-colors group-hover:bg-ink group-hover:text-white">
-                            {p.priceSource}에서 보기 <ExternalLink className="h-3.5 w-3.5" />
-                          </span>
+                        </a>
+                        {(p.offers ?? []).length > 0 && (
+                          <div className="mt-3 rounded-md bg-[#F6F8F7] px-2.5 py-2">
+                            <p className="mb-1 flex items-center justify-between text-[11px] text-sub">
+                              <span className="font-bold text-ink">다른 쇼핑몰</span>
+                              <span>배송비 포함</span>
+                            </p>
+                            <ul className="space-y-0.5">
+                              {(p.offers ?? []).slice(0, 2).map((o) => (
+                                <li key={o.url}>
+                                  <a href={o.url} target="_blank" rel="noopener nofollow" className="flex items-baseline justify-between gap-2 py-0.5 text-[12px] hover:underline">
+                                    <span className="min-w-0 truncate">{o.store}{o.count && o.count !== p.count ? ` ${o.count}개` : ''}</span>
+                                    <span className={`shrink-0 font-bold tabular-nums ${offerUnit(p, o) < p.unit - 0.5 ? 'text-brand' : 'text-ink'}`}>{won(o.price + o.ship)}원</span>
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                            {p.danawaUrl && (
+                              <a href={p.danawaUrl} target="_blank" rel="noopener nofollow" className="mt-1 block text-[11px] text-sub underline-offset-2 hover:underline">
+                                전체 쇼핑몰 가격 보기
+                              </a>
+                            )}
+                          </div>
+                        )}
+                        <a href={linkFor(p)} target="_blank" rel="noopener sponsored" className="mt-3 flex items-center justify-center gap-1 rounded-md border border-ink py-2 text-[13px] font-bold transition-colors hover:bg-ink hover:text-white">
+                          {p.priceSource}에서 보기 <ExternalLink className="h-3.5 w-3.5" />
                         </a>
                       </li>
                     )
@@ -430,7 +490,7 @@ export default function App() {
             <h2 className="text-[22px] font-black">한눈에 비교</h2>
             <p className="mt-1 text-[14px] text-sub">수치는 각 상품의 표시 기준량이에요. 빨간 글씨는 인공감미료예요.</p>
             <div className="mt-5 overflow-x-auto rounded-lg border border-line">
-              <table className="w-full min-w-[820px] text-[13px]">
+              <table className="w-full min-w-[980px] text-[13px]">
                 <thead className="bg-[#F6F8F7] text-left text-sub">
                   <tr>
                     <th className="px-3 py-2.5 font-medium">상품</th>
@@ -439,6 +499,8 @@ export default function App() {
                     <th className="px-3 py-2.5 text-right font-medium">당류</th>
                     <th className="px-3 py-2.5 text-right font-medium">열량</th>
                     <th className="px-3 py-2.5 font-medium">감미료</th>
+                    <th className="px-3 py-2.5 text-right font-medium">쿠팡</th>
+                    <th className="px-3 py-2.5 font-medium">가장 싼 곳</th>
                     <th className="px-3 py-2.5 text-right font-medium">비교 가격</th>
                   </tr>
                 </thead>
@@ -457,6 +519,8 @@ export default function App() {
                             <span key={s} className={isArtificial(s) ? 'text-[#B4533A]' : ''}>{j ? ', ' : ''}{s}</span>
                           )) : '없음'}
                         </td>
+                        <td className="px-3 py-2.5 text-right"><a href={linkFor(p)} target="_blank" rel="noopener sponsored" className="hover:underline">{won(p.price)}원</a></td>
+                        <td className="px-3 py-2.5">{p.cheaperElsewhere ? <span className="font-medium text-brand">{p.bestStore}</span> : <span className="text-sub">{p.priceSource}</span>}</td>
                         <td className="px-3 py-2.5 text-right font-bold text-brand">{v ? `${v.label} ${won(v.v)}원` : '—'}</td>
                       </tr>
                     )
@@ -504,7 +568,7 @@ export default function App() {
               <AccordionItem value="price">
                 <AccordionTrigger className="text-left text-[15px] font-bold">가격은 얼마나 자주 바뀌나요?</AccordionTrigger>
                 <AccordionContent className="text-[14px] leading-relaxed text-sub">
-                  판매처 가격은 할인 행사에 따라 수시로 바뀌어요. 카드에 적힌 날짜의 판매가라서 구매 직전에 판매처 페이지에서 최종 가격을 꼭 확인해 주세요.
+                  판매처 가격은 할인 행사에 따라 수시로 바뀌어요. 쿠팡 가격은 매일 아침 갱신하고, 11번가, G마켓, 옥션, 롯데ON 같은 다른 쇼핑몰 가격은 다나와 가격비교에서 같은 구성 상품을 찾아 배송비를 더한 값으로 적었어요. 가성비 순위는 이 중 가장 싼 곳을 기준으로 계산해요. 카드에 적힌 날짜의 가격이라서 구매 직전에 판매처 페이지에서 최종 가격을 꼭 확인해 주세요.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
