@@ -21,7 +21,31 @@
       "수크랄로스",
       "아세설팜칼륨"
     ],
-    "ingredientSource": "코스트코 상품정보"
+    "ingredientSource": "코스트코 상품정보",
+    "danawaUrl": "https://prod.danawa.com/info/?pcode=68774003",
+    "danawaTitle": "매일유업 셀렉스 프로핏 밀크 바닐라 250ml (24개)",
+    "offers": [
+      {
+        "store": "11번가",
+        "price": 34350,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228130&cate3=229024&cate4=232972&pcode=68774003&cmpnyc=TH201&safe_trade=4&fee_type=T&link_pcode=8998780905&package=0&setpc=0"
+      },
+      {
+        "store": "세영마켓(네이버)",
+        "price": 35380,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228130&cate3=229024&cate4=232972&pcode=68774003&cmpnyc=TW72C6&safe_trade=4&fee_type=N&link_pcode=12932751103&package=0&setpc=0"
+      },
+      {
+        "store": "옥션",
+        "price": 36870,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228130&cate3=229024&cate4=232972&pcode=68774003&cmpnyc=EE715&safe_trade=4&fee_type=T&link_pcode=F447033827&package=0&setpc=0"
+      }
+    ],
+    "offersDate": "2026-11-04",
+    "image": "https://thumbnail2.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/52636601678926-3cf11b31-2bd0-4e4d-a37b-3ed6ca0c62db.jpg"
   },
   {
     "id": "himune-active-zero",
@@ -71,7 +95,31 @@
       "수크랄로스",
       "아세설팜칼륨"
     ],
-    "ingredientSource": "오아시스마켓 상품정보"
+    "ingredientSource": "오아시스마켓 상품정보",
+    "danawaUrl": "https://prod.danawa.com/info/?pcode=28798079",
+    "danawaTitle": "남양유업 테이크핏 맥스 호박고구마맛 250ml (24개)",
+    "offers": [
+      {
+        "store": "G마켓",
+        "price": 30270,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228130&cate3=229024&cate4=232972&pcode=28798079&cmpnyc=EE128&safe_trade=4&fee_type=T&link_pcode=4094609163&package=0&setpc=0"
+      },
+      {
+        "store": "옥션",
+        "price": 31420,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228130&cate3=229024&cate4=232972&pcode=28798079&cmpnyc=EE715&safe_trade=4&fee_type=T&link_pcode=D651157841&package=0&setpc=0"
+      },
+      {
+        "store": "신세계라이브쇼핑",
+        "price": 32220,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228130&cate3=229024&cate4=232972&pcode=28798079&cmpnyc=TRB03&safe_trade=4&fee_type=T&link_pcode=89445645&package=0&setpc=0"
+      }
+    ],
+    "offersDate": "2026-11-04",
+    "image": "https://thumbnail9.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/00ba/ba7407416daea294e46130887cc1b52a392700fcf9252e21caf96357c24f.jpg"
   },
   {
     "id": "thedanbaek-choco",
@@ -117,7 +165,31 @@
       "폴리글리시톨",
       "스테비아"
     ],
-    "ingredientSource": "SSG 상품정보"
+    "ingredientSource": "SSG 상품정보",
+    "danawaUrl": "https://prod.danawa.com/info/?pcode=106553786",
+    "danawaTitle": "빼바 리얼 초콜릿 프로틴바 다크 40g (9개)",
+    "offers": [
+      {
+        "store": "롯데ON",
+        "price": 33110,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228136&cate3=229111&cate4=233464&pcode=106553786&cmpnyc=EE309&safe_trade=4&fee_type=T&link_pcode=LO2803716895&package=0&setpc=0"
+      },
+      {
+        "store": "옥션",
+        "price": 33110,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228136&cate3=229111&cate4=233464&pcode=106553786&cmpnyc=EE715&safe_trade=4&fee_type=T&link_pcode=F611640601&package=0&setpc=0"
+      },
+      {
+        "store": "G마켓",
+        "price": 33850,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228136&cate3=229111&cate4=233464&pcode=106553786&cmpnyc=EE128&safe_trade=4&fee_type=T&link_pcode=4891308546&package=0&setpc=0"
+      }
+    ],
+    "offersDate": "2026-11-04",
+    "image": "https://t5a.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/14f9/666bd27f2d7b7da6369458cf5cb5574eb112b6f88de80075f6cd48c02fc0.png"
   },
   {
     "id": "benofhouse-softbar",
@@ -181,7 +253,31 @@
     "color": "#6B4A3A",
     "priceSource": "쿠팡",
     "estimated": false,
-    "priceDate": "2026-11-03"
+    "priceDate": "2026-11-03",
+    "danawaUrl": "https://prod.danawa.com/info/?pcode=28249037",
+    "danawaTitle": "매일유업 셀렉스 프로핏 모카 초콜릿 250ml (36개)",
+    "offers": [
+      {
+        "store": "11번가",
+        "price": 47410,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228130&cate3=229024&cate4=232972&pcode=28249037&cmpnyc=TH201&safe_trade=4&fee_type=T&link_pcode=8991188398&package=0&setpc=0"
+      },
+      {
+        "store": "옥션",
+        "price": 47420,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228130&cate3=229024&cate4=232972&pcode=28249037&cmpnyc=EE715&safe_trade=4&fee_type=T&link_pcode=D578207109&package=0&setpc=0"
+      },
+      {
+        "store": "G마켓",
+        "price": 47430,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228130&cate3=229024&cate4=232972&pcode=28249037&cmpnyc=EE128&safe_trade=4&fee_type=T&link_pcode=3162829145&package=0&setpc=0"
+      }
+    ],
+    "offersDate": "2026-11-04",
+    "image": "https://t5a.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/843629124769326-726c4697-24a1-4122-a98d-18e8ebe8cac7.jpg"
   },
   {
     "id": "labnosh-perfect-mini-choco",
@@ -206,7 +302,8 @@
     "color": "#5A3E36",
     "priceSource": "쿠팡",
     "estimated": false,
-    "priceDate": "2026-11-03"
+    "priceDate": "2026-11-03",
+    "image": "https://thumbnail2.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/1552/76d56e1d599914c4d90bff5b11eae0a2f05df5d475d16e4ab4e946e32a56.png"
   },
   {
     "id": "premier-protein-choco",
@@ -230,7 +327,8 @@
     "color": "#2F4A7A",
     "priceSource": "쿠팡",
     "estimated": false,
-    "priceDate": "2026-11-03"
+    "priceDate": "2026-11-03",
+    "image": "https://t2a.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/e457/5a73b6fef01d7957fb9c70b55a2b6ecd47315fac441561e624f2f7273b84.jpg"
   },
   {
     "id": "vegemil-high-protein-plain",
@@ -255,7 +353,34 @@
     "color": "#B9965A",
     "priceSource": "쿠팡",
     "estimated": false,
-    "priceDate": "2026-11-03"
+    "priceDate": "2026-11-03",
+    "danawaUrl": "https://prod.danawa.com/info/?pcode=95105627",
+    "danawaTitle": "정식품 베지밀 고단백 두유 플레인 190ml (48개)",
+    "offers": [
+      {
+        "store": "옥션",
+        "price": 26900,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228142&cate3=229174&cate4=233749&pcode=95105627&cmpnyc=EE715&safe_trade=4&fee_type=T&link_pcode=F263104169&package=0&setpc=0",
+        "count": 48
+      },
+      {
+        "store": "G마켓",
+        "price": 26920,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228142&cate3=229174&cate4=233749&pcode=95105627&cmpnyc=EE128&safe_trade=4&fee_type=T&link_pcode=4460977837&package=0&setpc=0",
+        "count": 48
+      },
+      {
+        "store": "현대Hmall",
+        "price": 27120,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228142&cate3=229174&cate4=233749&pcode=95105627&cmpnyc=ED907&safe_trade=4&fee_type=T&link_pcode=2251598995&package=0&setpc=0",
+        "count": 48
+      }
+    ],
+    "offersDate": "2026-11-04",
+    "image": "https://thumbnail6.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/5d1c/e221655637ea5dde482e15d367e8f9d9b8a2833455588c5a03b7ac02f9ae.png"
   },
   {
     "id": "yozm-greek-plain",
@@ -277,7 +402,31 @@
     "color": "#8FB3C9",
     "priceSource": "쿠팡",
     "estimated": false,
-    "priceDate": "2026-11-03"
+    "priceDate": "2026-11-03",
+    "danawaUrl": "https://prod.danawa.com/info/?pcode=93476462",
+    "danawaTitle": "요즘 플레인 그릭요거트 450g (2개)",
+    "offers": [
+      {
+        "store": "G마켓",
+        "price": 25660,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228142&cate3=229168&cate4=233671&pcode=93476462&cmpnyc=EE128&safe_trade=4&fee_type=T&link_pcode=4894204280&package=0&setpc=0"
+      },
+      {
+        "store": "옥션",
+        "price": 25660,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228142&cate3=229168&cate4=233671&pcode=93476462&cmpnyc=EE715&safe_trade=4&fee_type=T&link_pcode=F704249955&package=0&setpc=0"
+      },
+      {
+        "store": "11번가",
+        "price": 25670,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228142&cate3=229168&cate4=233671&pcode=93476462&cmpnyc=TH201&safe_trade=4&fee_type=T&link_pcode=9495703972&package=0&setpc=0"
+      }
+    ],
+    "offersDate": "2026-11-04",
+    "image": "https://thumbnail7.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/image_audit/advertiser/1766984011338/6e355c30-f37d-4b84-aaf9-020bf292d690.jpg"
   },
   {
     "id": "yozm-greek-allulose",
@@ -300,7 +449,19 @@
     "color": "#C99AB0",
     "priceSource": "쿠팡",
     "estimated": false,
-    "priceDate": "2026-11-03"
+    "priceDate": "2026-11-03",
+    "danawaUrl": "https://prod.danawa.com/info/?pcode=93476351",
+    "danawaTitle": "요즘 마이노멀 알룰로스 블렌드 그릭요거트 100g (6개)",
+    "offers": [
+      {
+        "store": "코아페HOME(네이버)",
+        "price": 23290,
+        "ship": 3500,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228142&cate3=229168&cate4=233671&pcode=93476351&cmpnyc=TW6164&safe_trade=4&fee_type=N&link_pcode=12026686305&package=0&setpc=0"
+      }
+    ],
+    "offersDate": "2026-11-04",
+    "image": "https://thumbnail1.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/cfd2/228e4a2c6464c9a3da2d73c6f79b540143db111966c16ca4edd5a9cfe587.jpg"
   },
   {
     "id": "dongwon-tuna-light",
@@ -322,7 +483,31 @@
     "color": "#2C6E9B",
     "priceSource": "쿠팡",
     "estimated": false,
-    "priceDate": "2026-11-03"
+    "priceDate": "2026-11-03",
+    "danawaUrl": "https://prod.danawa.com/info/?pcode=3091820",
+    "danawaTitle": "동원F&B 라이트 스탠다드 참치 150g (12개)",
+    "offers": [
+      {
+        "store": "11번가",
+        "price": 24890,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228139&cate3=229135&cate4=233536&pcode=3091820&cmpnyc=TH201&safe_trade=4&fee_type=T&link_pcode=8928649278&package=0&setpc=0"
+      },
+      {
+        "store": "이마트몰",
+        "price": 27990,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228139&cate3=229135&cate4=233536&pcode=3091820&cmpnyc=EE311&safe_trade=4&fee_type=T&link_pcode=1000806169778&package=0&setpc=0"
+      },
+      {
+        "store": "SSG.COM",
+        "price": 27990,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228139&cate3=229135&cate4=233536&pcode=3091820&cmpnyc=TN118&safe_trade=4&fee_type=T&link_pcode=1000806169778&package=0&setpc=0"
+      }
+    ],
+    "offersDate": "2026-11-04",
+    "image": "https://thumbnail14.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/f841/545eb339bff44963bee1042e74f96cd8172fd62f40f8f1f821a4cdf60044.jpg"
   },
   {
     "id": "harim-chicken-raw",
@@ -345,7 +530,8 @@
     "priceSource": "쿠팡",
     "estimated": false,
     "priceDate": "2026-11-03",
-    "sweeteners": []
+    "sweeteners": [],
+    "image": "https://thumbnail3.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/f2c4/4c04943808763c4ed2985a93878fcb8092e7ad6960f59a19acf171eee8b2.jpg"
   },
   {
     "id": "maeil-bio-greek-plain",
@@ -368,7 +554,31 @@
     "priceSource": "쿠팡",
     "estimated": false,
     "priceDate": "2026-11-03",
-    "sweeteners": []
+    "sweeteners": [],
+    "danawaUrl": "https://prod.danawa.com/info/?pcode=29371220",
+    "danawaTitle": "매일유업 매일바이오 그릭요거트 무가당 플레인 400g (6개)",
+    "offers": [
+      {
+        "store": "11번가",
+        "price": 26210,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228142&cate3=229168&cate4=233671&pcode=29371220&cmpnyc=TH201&safe_trade=4&fee_type=T&link_pcode=9547636282&package=0&setpc=0"
+      },
+      {
+        "store": "롯데ON",
+        "price": 26220,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228142&cate3=229168&cate4=233671&pcode=29371220&cmpnyc=EE309&safe_trade=4&fee_type=T&link_pcode=LO2746588016&package=0&setpc=0"
+      },
+      {
+        "store": "옥션",
+        "price": 30200,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228142&cate3=229168&cate4=233671&pcode=29371220&cmpnyc=EE715&safe_trade=4&fee_type=T&link_pcode=F633839559&package=0&setpc=0"
+      }
+    ],
+    "offersDate": "2026-11-04",
+    "image": "https://t2c.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/504358946689689-e0e5735b-fbbd-4f90-80d6-2b54d3a36571.jpg"
   },
   {
     "id": "pulmuone-greek-plain",
@@ -392,7 +602,8 @@
     "color": "#A7C27F",
     "priceSource": "쿠팡",
     "estimated": false,
-    "priceDate": "2026-11-03"
+    "priceDate": "2026-11-03",
+    "image": "https://thumbnail8.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/1470008938807018-2e1a3aad-35aa-4959-a232-786e839101f8.jpg"
   },
   {
     "id": "koukakis-greek-0",
@@ -415,7 +626,8 @@
     "priceSource": "쿠팡",
     "estimated": false,
     "priceDate": "2026-11-03",
-    "sweeteners": []
+    "sweeteners": [],
+    "image": "https://t4c.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/164461920980999-72e66618-ea05-4147-9ad2-a623993184f3.jpg"
   },
   {
     "id": "andong-tofu-firm",
@@ -438,7 +650,31 @@
     "priceSource": "쿠팡",
     "estimated": false,
     "priceDate": "2026-11-03",
-    "sweeteners": []
+    "sweeteners": [],
+    "danawaUrl": "https://prod.danawa.com/info/?pcode=6139984",
+    "danawaTitle": "안동농협 안동생명콩 두부 부침용 350g (4개)",
+    "offers": [
+      {
+        "store": "옥션",
+        "price": 14410,
+        "ship": 3000,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=56857&cate3=222958&cate4=0&pcode=6139984&cmpnyc=EE715&safe_trade=4&fee_type=T&link_pcode=F651914927&package=0&setpc=0"
+      },
+      {
+        "store": "G마켓",
+        "price": 14410,
+        "ship": 3000,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=56857&cate3=222958&cate4=0&pcode=6139984&cmpnyc=EE128&safe_trade=4&fee_type=T&link_pcode=4844431522&package=0&setpc=0"
+      },
+      {
+        "store": "롯데홈쇼핑",
+        "price": 14470,
+        "ship": 3000,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=56857&cate3=222958&cate4=0&pcode=6139984&cmpnyc=ED903&safe_trade=4&fee_type=T&link_pcode=1318662119&package=0&setpc=0"
+      }
+    ],
+    "offersDate": "2026-11-04",
+    "image": "https://t1a.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/6eb8/77c46aa25d2086fd5610b335144d5577c91ca9f9115177f7a70056edfbce.jpg"
   },
   {
     "id": "andong-tofu-silken",
@@ -460,7 +696,19 @@
     "priceSource": "쿠팡",
     "estimated": false,
     "priceDate": "2026-11-03",
-    "sweeteners": []
+    "sweeteners": [],
+    "danawaUrl": "https://prod.danawa.com/info/?pcode=120366713",
+    "danawaTitle": "안동농협 안동생명콩 현미 연두부 80g (15개)",
+    "offers": [
+      {
+        "store": "G마켓",
+        "price": 12650,
+        "ship": 3000,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228145&cate3=229228&cate4=233938&pcode=120366713&cmpnyc=EE128&safe_trade=4&fee_type=T&link_pcode=1158279619&package=0&setpc=0"
+      }
+    ],
+    "offersDate": "2026-11-04",
+    "image": "https://thumbnail11.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/31c5/fe97a61f2c44eb2c72cdae9c7d605b315d440b2cc281d44e1c2beddd9ba1.jpg"
   },
   {
     "id": "kirkland-organic-pb",
@@ -483,7 +731,31 @@
     "priceSource": "쿠팡",
     "estimated": false,
     "priceDate": "2026-11-03",
-    "sweeteners": []
+    "sweeteners": [],
+    "danawaUrl": "https://prod.danawa.com/info/?pcode=32678690",
+    "danawaTitle": "커클랜드 시그니춰 유기농 피넛 버터 793g (1개)",
+    "offers": [
+      {
+        "store": "G마켓",
+        "price": 9130,
+        "ship": 3000,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228133&cate3=229072&cate4=233242&pcode=32678690&cmpnyc=EE128&safe_trade=4&fee_type=T&link_pcode=4419372902&package=0&setpc=0"
+      },
+      {
+        "store": "11번가",
+        "price": 8690,
+        "ship": 3500,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228133&cate3=229072&cate4=233242&pcode=32678690&cmpnyc=TH201&safe_trade=4&fee_type=T&link_pcode=8436320530&package=0&setpc=0"
+      },
+      {
+        "store": "옥션",
+        "price": 8700,
+        "ship": 3500,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228133&cate3=229072&cate4=233242&pcode=32678690&cmpnyc=EE715&safe_trade=4&fee_type=T&link_pcode=F265673629&package=0&setpc=0"
+      }
+    ],
+    "offersDate": "2026-11-04",
+    "image": "https://thumbnail5.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/image_audit/prod/949f2dc3-3809-4a02-a508-cb38c29b5d90_fixing_v2.png"
   },
   {
     "id": "wasa-light-rye",
@@ -497,7 +769,7 @@
     "protein": 2,
     "sugar": 0,
     "kcal": 60,
-    "price": 9200,
+    "price": 6500,
     "url": "https://link.coupang.com/a/inxCLHvbc4",
     "coupangTitle": "와사 라이트 라이 크리스프브레드 홀 그레인, 270g, 1개",
     "coupangProductId": "7695715",
@@ -505,8 +777,9 @@
     "color": "#C59A5B",
     "priceSource": "쿠팡",
     "estimated": false,
-    "priceDate": "2026-11-03",
-    "sweeteners": []
+    "priceDate": "2026-11-04",
+    "sweeteners": [],
+    "image": "https://t5c.coupangcdn.com/thumbnails/remote/492x492ex/image/product/image/vendoritem/2018/09/10/3049808498/e1a2b7a1-3f82-4a67-9ecf-4e6e5186beb9.jpg"
   },
   {
     "id": "farm8-salad",
@@ -529,6 +802,7 @@
     "priceSource": "쿠팡",
     "estimated": false,
     "priceDate": "2026-11-03",
-    "sweeteners": []
+    "sweeteners": [],
+    "image": "https://thumbnail11.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/58379428805030-60981a66-6a8d-4924-ae7d-c70c96014dd7.jpg"
   }
 ]
