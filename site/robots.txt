@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gramdang.netlify.app/sitemap.xml
+Sitemap: https://jungmin713.github.io/gramdang/sitemap.xml
