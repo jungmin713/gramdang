@@ -804,5 +804,88 @@
     "priceDate": "2026-11-03",
     "sweeteners": [],
     "image": "https://thumbnail11.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/58379428805030-60981a66-6a8d-4924-ae7d-c70c96014dd7.jpg"
+  },
+  {
+    "id": "nuldam-bagel-plain",
+    "name": "널담 고단백 배꼽 베이글 플레인",
+    "brand": "널담",
+    "category": "bread",
+    "serving": "140g",
+    "count": 12,
+    "protein": 21,
+    "sugar": 1.5,
+    "kcal": 391,
+    "price": 20200,
+    "url": "https://link.coupang.com/a/iqD7hVZZsG",
+    "coupangTitle": "널담 고단백 배꼽 베이글 플레인 (냉동), 12개, 140g",
+    "coupangProductId": "6778859172",
+    "sweeteners": [
+      "에리스리톨",
+      "스테비아"
+    ],
+    "note": "통밀이 아닌 밀가루 냉동 베이글이에요. 나트륨이 개당 658mg으로 높은 편이고, 에리스리톨은 많이 먹으면 배가 불편할 수 있어요",
+    "ingredientSource": "널담 공식몰 원재료표",
+    "color": "#C8925A",
+    "priceSource": "쿠팡",
+    "estimated": false,
+    "priceDate": "2026-11-05",
+    "image": "https://thumbnail1.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/4024883842873089-eebd109a-a9c6-4527-9ba2-9a76f188d7a6.jpg",
+    "danawaUrl": "https://prod.danawa.com/info/?pcode=123805281",
+    "danawaTitle": "널담 고단백 저당 배꼽 베이글 플레인 140g (12개)",
+    "offers": [
+      {
+        "store": "이마트몰",
+        "price": 32736,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228136&cate3=229099&cate4=233416&pcode=123805281&cmpnyc=EE311&safe_trade=4&fee_type=T&link_pcode=1000632063916&package=0&setpc=0"
+      },
+      {
+        "store": "SSG.COM",
+        "price": 32736,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228136&cate3=229099&cate4=233416&pcode=123805281&cmpnyc=TN118&safe_trade=4&fee_type=T&link_pcode=1000632063916&package=0&setpc=0"
+      }
+    ],
+    "offersDate": "2026-11-05"
+  },
+  {
+    "id": "sajo-mild-tuna",
+    "name": "사조참치 마일드",
+    "brand": "사조대림",
+    "category": "seafood",
+    "serving": "150g",
+    "count": 10,
+    "protein": 28.5,
+    "sugar": 0,
+    "kcal": 228,
+    "price": 19800,
+    "url": "https://link.coupang.com/a/iqD9yKJ6e4",
+    "coupangTitle": "사조참치 마일드, 150g, 10개",
+    "coupangProductId": "37909011",
+    "sweeteners": [],
+    "note": "100g당 나트륨 320mg으로 낮은 편이에요. 100g 표시값을 1캔 150g으로 환산했고, 원재료 중 야채소스 세부 성분은 공개되지 않았지만 당류는 0g이에요",
+    "ingredientSource": "오아시스마켓 상품정보",
+    "color": "#3D6E9E",
+    "priceSource": "쿠팡",
+    "estimated": false,
+    "priceDate": "2026-11-05",
+    "image": "https://thumbnail14.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/318009237272861-62a0fe53-eeff-47e3-8547-f7c14c44fdd1.jpg",
+    "danawaUrl": "https://prod.danawa.com/info/?pcode=16828172",
+    "danawaTitle": "사조대림 마일드 참치 안심따개 150g (10개)",
+    "offers": [
+      {
+        "store": "곰돌이창고(네이버)",
+        "price": 17000,
+        "ship": 3500,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228139&cate3=229135&cate4=233536&pcode=16828172&cmpnyc=TV91F9&safe_trade=4&fee_type=N&link_pcode=8403214861&package=0&setpc=0"
+      },
+      {
+        "store": "롯데ON",
+        "price": 22300,
+        "ship": 0,
+        "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=46803&cate2=228139&cate3=229135&cate4=233536&pcode=16828172&cmpnyc=EE309&safe_trade=4&fee_type=T&link_pcode=LO2360686637&package=0&setpc=0"
+      }
+    ],
+    "offersDate": "2026-11-05"
   }
 ]
