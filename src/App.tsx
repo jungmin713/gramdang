@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import raw from './data/products.json'
 import meta from './data/meta.json'
 
-type Cat = 'drink' | 'dairy' | 'tofu' | 'chicken' | 'seafood' | 'bar' | 'spread' | 'grain' | 'salad' | 'supplement'
+type Cat = 'drink' | 'dairy' | 'tofu' | 'chicken' | 'seafood' | 'bar' | 'bread' | 'spread' | 'grain' | 'salad' | 'supplement'
 type Product = {
   id: string; name: string; brand: string; category: Cat; serving: string; count: number
   protein: number | null; sugar: number | null; sugarLabel?: string; kcal: number | null; price: number
@@ -25,9 +25,9 @@ type Sweet = 'all' | 'noArtificial' | 'none'
 
 const CAT_LABEL: Record<Cat, string> = {
   drink: '단백질 음료', dairy: '그릭요거트', tofu: '두부', chicken: '닭가슴살', seafood: '참치·수산물',
-  bar: '프로틴바', spread: '땅콩버터', grain: '통곡물 크래커', salad: '샐러드', supplement: '단백질 보충제',
+  bar: '프로틴바', bread: '고단백 빵', spread: '땅콩버터', grain: '통곡물 크래커', salad: '샐러드', supplement: '단백질 보충제',
 }
-const CAT_ORDER: Cat[] = ['drink', 'dairy', 'tofu', 'chicken', 'seafood', 'bar', 'spread', 'grain', 'salad', 'supplement']
+const CAT_ORDER: Cat[] = ['drink', 'dairy', 'tofu', 'chicken', 'seafood', 'bar', 'bread', 'spread', 'grain', 'salad', 'supplement']
 const WHOLE_CATS: Cat[] = ['spread', 'grain', 'salad']
 const ARTIFICIAL = ['수크랄로스', '아세설팜칼륨', '아스파탐', '사카린']
 const isArtificial = (s: string) => ARTIFICIAL.includes(s)
