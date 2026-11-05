@@ -4,7 +4,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 
 const SITE_URL = (process.env.SITE_URL || 'https://gramdang.example.com').replace(/\/$/, '')
 const products = JSON.parse(readFileSync('src/data/products.json', 'utf8')).filter((p) => !p.hidden)
-const CAT = { drink: '단백질 음료', dairy: '그릭요거트', tofu: '두부', chicken: '닭가슴살', seafood: '참치·수산물', bar: '프로틴바', spread: '땅콩버터', grain: '통곡물 크래커', salad: '샐러드', supplement: '단백질 보충제' }
+const CAT = { drink: '단백질 음료', dairy: '그릭요거트', tofu: '두부', chicken: '닭가슴살', seafood: '참치·수산물', bar: '프로틴바', bread: '고단백 빵', spread: '땅콩버터', grain: '통곡물 크래커', salad: '샐러드', supplement: '단백질 보충제' }
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
 const won = (n) => Math.round(n).toLocaleString('ko-KR')
 
