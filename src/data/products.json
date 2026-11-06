@@ -887,5 +887,29 @@
       }
     ],
     "offersDate": "2026-11-05"
+  },
+  {
+    "id": "kimdandan-basic-steam",
+    "name": "김단단 베이직 스팀 닭가슴살",
+    "brand": "김단단",
+    "category": "chicken",
+    "serving": "100g",
+    "count": 20,
+    "protein": 22,
+    "sugar": 1,
+    "sugarLabel": "1g 미만",
+    "kcal": 105,
+    "price": 25900,
+    "url": "https://link.coupang.com/a/iqGl0ifpng",
+    "coupangTitle": "김단단 베이직 스팀 닭가슴살 1kg+1kg, 2개, 1kg",
+    "coupangProductId": "9627934243",
+    "sweeteners": [],
+    "note": "국내산 닭가슴살을 소금, 감자전분, 마늘분말로 간해서 찐 냉동 제품이에요. 아질산나트륨과 훈제 없이 만들었고 나트륨은 100g당 280mg이에요. 복합조미식품II 세부 원료는 표시되지 않았어요",
+    "ingredientSource": "제품 포장지 원재료표",
+    "color": "#E8C9A0",
+    "priceSource": "쿠팡",
+    "estimated": false,
+    "priceDate": "2026-11-06",
+    "image": "https://thumbnail13.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/d121/dde3c254d435f056b737e440c1931fe80cefab9d53b47f8546303d55dfd2.jpg"
   }
 ]
